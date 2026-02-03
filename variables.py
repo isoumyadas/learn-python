@@ -10,13 +10,13 @@
     # my name = "Dave" (No spaces)                                      
     # class = "python"  (Can't use python keywords)
 
-# This is called snak_case
+# This is called snake_case
 user_age = 24
 user_name = "sammy"
 is_logged_in = True
 shopping_cart_total = 49.99
 
-# Avoid camalCase [You can use that, but avoid it]
+# Avoid camelCase [You can use that, but avoid it]
 # userName = "sam"
 
 
