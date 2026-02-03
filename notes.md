@@ -72,5 +72,3 @@
       - Using 4 spaces for indentation (not tabs)
       - Naming conventions like user_name not userName
       - Where to put spaces around operators
-
-## numbers
