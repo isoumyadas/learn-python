@@ -72,3 +72,63 @@
       - Using 4 spaces for indentation (not tabs)
       - Naming conventions like user_name not userName
       - Where to put spaces around operators
+
+## mutable & immutable
+
+- In python eveything is object
+
+- Mutable mean you can change the object
+- Immutable mean you can't change the object
+
+- In memory the reference is not the variable, it's value which is stored, and if that value not pointed to any varaible then python has automatic garbage collection to remove that value from memory.
+
+What does that mean?
+
+- In Python, variables do not store values; they store references to objects in memory.
+
+- The object (value) lives in memory independently of the variable name.
+
+- Multiple variables can reference the same object.
+
+- Immutability means the object itself cannot change (e.g., int, str, tuple).
+- When you “change” an immutable value, Python creates a new object.
+
+- Mutability means the object can change in place (e.g., list, dict, set).
+- Reassigning a variable just changes what it references, not the object.
+
+- Python uses reference counting to track how many references an object has.
+- If an object’s reference count becomes zero, it becomes eligible for garbage collection.
+- Garbage collection frees memory for objects no longer referenced by any variable.
+- Memory has datatype | variable doesn't get assigned my datatype
+- numbers and strings has delay in garbage collection.
+
+## copy (slicing)
+
+```ts
+h1 = [1,2,3]
+
+h2 = h1[:] // this mean start from 0 index and end at last (This is copy of h1)
+
+// so when you change any value from h1
+
+h1[0] = 88
+
+// h2 never changes as it was copy not same reference.
+
+// And mutable like lists, dict, set etc
+
+h3 = [1,2,3]
+h4 = [1,2,3]
+
+// The above two variables hold same values, but the reference is different
+
+// if you do
+
+h3 == h4 // this will give you true, cauz they have same values
+
+// but
+
+h3 is h4 // this gives you false, because they point to different reference types in memory or you can say two seperate objects.
+
+
+```
