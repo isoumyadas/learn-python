@@ -97,3 +97,88 @@ print(f"modifying: {nums}")
 
 # Now this can be done by List comprehension
 # numbers = [num for num in numbers if num != 2]
+
+print("*" * 20, f"Dictionaries", "*" * 20)
+#------------------------------- DICT -------------------------------------------
+
+# Dictionaries -> are like object in JS
+
+    # Empty dictionary
+my_dict = {}
+
+    # Dictionary with data
+person = {
+    "name": "Alice",
+    "age": 30,
+    "city": "New York"
+}
+
+    # Different ways to create
+scores = dict(math=95, english=87, science=92)
+
+print(f"person : {person}")
+print(f"scores : {scores}")
+
+print("-" * 20, f"Accessing values", "-" * 20)
+
+#Accessing values
+
+    # Get values by key
+print(person["name"])
+print(person["city"])
+
+    # Using get()
+print(person.get("job"))
+print(person.get("love", "IDK")) # this will return IDK because it's default value to be returned if love key is not found.
+
+# Changing dictionaries
+
+    # Add or update
+person["email"] = "alice@email.com"  # Add new
+person["age"] = 31                   # Update existing
+
+print(f"update & add : {person}")
+
+    # Remove items
+del person["email"] # remove by key
+print(f"del dict: {person}")
+
+age = person.pop("age") # remove & return
+print(f"pop dict: {age}") # -> this will return you the values that you've removed.
+
+person.clear() # remove all items
+
+
+
+# Dictionary methods
+person = {"name": "Alice", "age": 30, "city": "New York"}
+
+    # You can convert the keys into list to get access of per key.
+per = list(person.keys())
+print(per[1])
+
+    # Get all keys, values, or items
+print(person.keys())    # dict_keys(['name', 'age', 'city'])
+print(person.values())  # dict_values(['Alice', 30, 'New York'])
+print(person.items())   # dict_items([('name', 'Alice'), ...])
+
+    # Check if key exists
+if "name" in person:
+    print("Name found!")
+
+    # Update multiple values
+person.update({"age": 31, "job": "Engineer"})
+print(f"update: {person}")
+
+
+# Nested dictionaries
+    # Dictionary of dictionaries
+students = {
+    "alice": {"age": 20, "grade": "A"},
+    "bob": {"age": 21, "grade": "B"},
+    "charlie": {"age": 19, "grade": "A"}
+}
+
+    # Access nested data
+print(students["alice"]["grade"])  # "A"
+print(students["charlie"]["age"])  # 19
