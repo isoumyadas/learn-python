@@ -132,3 +132,14 @@ h3 is h4 // this gives you false, because they point to different reference type
 
 
 ```
+
+## To open file in python 
+```ts
+
+  f = open('chai.py')
+
+  f.readline()
+
+  f.__next__()
+
+```
