@@ -136,10 +136,14 @@ h3 is h4 // this gives you false, because they point to different reference type
 ## To open file in python 
 ```ts
 
-  f = open('chai.py')
+  f = open('chai.py') // You don't need to iter(f) this, because it already iterated behind or you can say interable object. You can check this iter(f) is f => this will give you True
+
+  // But this is not same for list, you need to use iter()
 
   f.readline()
 
   f.__next__()
+
+  // Memory iter() always refer to starting point of referrence.
 
 ```
