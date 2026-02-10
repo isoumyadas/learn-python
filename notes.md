@@ -147,3 +147,55 @@ h3 is h4 // this gives you false, because they point to different reference type
   // Memory iter() always refer to starting point of referrence.
 
 ```
+
+## Scope
+- Scope mean: What variables do I have access to?
+  - 1. Start with local
+  - 2. Parent local?
+  - 3. Global
+  - 4. Built in python functions
+
+```python
+
+total = 0
+def count():
+  global total
+  total += 1
+  return total
+
+count()
+count()
+print(count())
+
+```
+
+// another way to do
+
+```python
+
+total = 0
+def count(total):
+  total += 1
+  return total
+
+print(count(count(count(total))))
+
+```
+
+=> nonLocal
+
+```python
+
+def outer():
+  x="lcoal"
+  def inner():
+    nonlocal x
+    x = "nonLocal"
+    print("inner: ", x)
+  inner()
+  print("outer: ", x)
+
+outer()
+
+
+```
