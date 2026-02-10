@@ -105,3 +105,39 @@ f, l = simple_function()
 
 print(f)
 print(l)
+
+# docstring
+
+def soemthing(): 
+    """
+    Docstring for soemthing, able to understand what does this function do
+    """
+    pass
+
+soemthing() # you'll get the info related to that function, while hoevering on the function call
+
+# you can access with
+
+print(soemthing.__doc__)
+# help(soemthing())
+
+
+# *args **kwargs
+
+def super_func(*args, **kwargs):
+    # args gives us tuple of values
+    # kwargs gives us dict of key & Values
+    total = 0
+    for items in kwargs.values():
+        total += items
+    return sum(args) + total
+
+print(super_func(1,2,3,45,5, num1=5, num2=33))
+
+# Rule : params, *args, default_params (i="sam"), **kwargs
+
+"""
+
+=> You can learn about scope, global & local variables in `notes.md`
+
+"""
