@@ -199,3 +199,60 @@ outer()
 
 
 ```
+
+## requirements.txt
+
+=> Here you can specify the packages you've installed so when other developers work on your project on their machine they don't need to install one by one package manually
+
+1. To create that :
+   `pip freeze > requirements.txt`
+
+2. To install that :
+   `pip install -r requirements.txt`
+
+
+## Modules & Package
+
+-> Modules mean files that ends with .py
+    You can import those file into your main.py using `import utility`
+
+-> Package mean folder 
+    You can import that file under package using `import folders_name.file_name`
+    eg: `shopping.shopping_cart`
+
+- Then you can use all the methods which are present inside module.
+
+1. In python every file is a module
+   1. Each module has a special built-in variable called:
+      1. __name__
+      - Its value depends on how the file is being used.
+   2. So when you run any file `functions.py` 
+      1. Python treats that file as the starting point of the program.
+   3. So python sets:
+      1. __name__ = "__main__"
+
+2. Simple rule to remember
+| How file is used | Value of `__name__` |
+| ---------------- | ------------------- |
+| Run directly     | `"__main__"`        |
+| Imported         | `"module_name"`     |
+
+3. Why does python do this?
+   - This allows us to write code like this:
+      ```python
+          if __name__ == "__main__":
+            print("This runs only when file is executed directly")
+      ```
+So:
+
+- If you run the file → this block runs
+- If you import the file → this block does NOT run
+
+Very useful for:
+
+1. Testing
+2. Writing reusable modules
+3. Avoiding unwanted execution during import
+
+
+
