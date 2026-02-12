@@ -68,3 +68,64 @@ def accumulator(acc, item):
 reducedValue = reduce(accumulator, my_list, 0)
 print(f"Reduced value: {reducedValue}")
 
+# =========================== Lambda expressions ==========================
+
+"""
+In python lambda expressions are one time anonymous functions that you don't need more than once.
+"""
+
+lambda_value = list(map(lambda item: item*4, my_list))
+print(f"Lambda function result : {lambda_value}")
+
+# List sorting
+
+a = [(0,2), (4,3), (10,-1), (9,9)]
+
+a.sort(key=lambda itme: itme[1])
+print(f"Sorted Value with lambda is : {a}")
+
+# ============================== List Comphrensions ==========================
+
+first_list = [char for char in "hello"]
+sec_list = [num for num in range(0,100)]
+third_list = [num**2 for num in range(0,88)]
+forth_list = [num**2 for num in range(0,100) if num % 2 == 0]
+
+print(f"First list => {first_list}")
+print(f"second list => {sec_list}")
+print(f"third list => {third_list}")
+print(f"forth list => {forth_list}")
+
+
+# ============================ List comphrensions in dict & set ==================
+
+#  In set => It's same as list just with {} 
+first_list_set = {char for char in "hello"}
+sec_list_set = {num for num in range(0,100)}
+third_list_set = {num**2 for num in range(0,88)}
+forth_list_set = {num**2 for num in range(0,100) if num % 2 == 0}
+
+print(f"First list => {first_list_set}")
+print(f"second list => {sec_list_set}")
+print(f"third list => {third_list_set}")
+print(f"forth list => {forth_list_set}")
+
+
+# In dict
+
+simple_list = {"a": 1, "b": 2}
+
+my_dict = {k:v**2 for k,v in simple_list.items() if v % 2 == 0}
+print(f"my_dict=> {my_dict}")
+
+my_dict2 = {num:num*2 for num in [1,2,3]}
+print(f"my_dict2=> {my_dict2}")
+
+
+# 
+
+some_list = ["a", "b", "c", "d", "a", "a", "c", "e", "f"]
+
+duplicates = list({value for value in some_list if some_list.count(value) > 1})
+
+print(f"Duplicates are : {duplicates}")
