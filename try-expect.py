@@ -75,3 +75,29 @@ try:
 except Exception as e:
     print(f"Critical error: {e}")
     raise  # Let the error propagate
+
+# ================================================================================================================================================================
+
+while True:
+    try:
+        age = int(input("What is your age? "))
+        print(age)
+    except ValueError:
+        print("Please enter a number!")
+    except ZeroDivisionError:
+        print('Please enter a number higher than 0')
+    else:
+        print("Thankyou!")
+        break
+
+# =====
+
+def sum(num1, num2):
+    try:
+        return num1/num2
+    #except TypeError as err:
+    except (TypeError, ZeroDivisionError) as err:
+        print(f"Something went wrong :: {err}")
+        
+
+sum(1, 0)
