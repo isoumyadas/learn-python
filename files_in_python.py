@@ -20,8 +20,9 @@ print("*" * 30)
 # Here we don't need to close the file, their is mode where we can read,write the file. And read is by default.
 """
 r => read
-w => write
-r+ => read & write
+w => write, assumes it's a new file, if no file then it creates new file if not exits
+r+ => read & write, write mode cursor starts from 0. This doesn't create new file if it didn't exits.
+a => append
 """
 with open("git_commits.md", mode="r") as my_file:
     # text_file = my_file.write() # this will overwrite the file you have in your file.
@@ -32,6 +33,23 @@ with open("git_commits.md", mode="r") as my_file:
 # write the file
 with open("git_commits.md", mode="r") as my_file:
     # text_file = my_file.write() # this will overwrite the file you have in your file.
-    # print(text_file)
+    # print(text_file) # this show how many letters have wrote.
     pass
+# When we write into file, the cursor resets.
 
+with open("git_commit_md_file", mode="a") as my_file:
+    text = my_file.write(":}")
+    print(text)
+
+
+# You can wrap it around try & excet block
+
+try:
+    with open("sad.txt", mode="a") as my_file:
+        print(text)
+except FileNotFoundError as err:
+    print("File doesn't exits")
+    raise err
+except IOError as err: # TO error mean, their is somehing writh computer while reading or writing the file.
+    print("File doesn't exits")
+    raise err
