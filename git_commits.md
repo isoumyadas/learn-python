@@ -21,3 +21,19 @@ refactor: simplify order processing logic
 test: add unit tests for payment service
 
 chore: upgrade lodash to latest version
+
+<!-- Git Chore Commit messages -->
+
+# Git chore:
+
+If you're just adding new dependencies:
+✅ chore: add axios and react-query for API data fetching
+
+✅ If they support a new feature:
+feat: add dependencies for authentication feature
+
+✅ If they fix something:
+fix: add missing dependency for build issue
+
+✅ If they’re dev dependencies:
+chore: add dev dependencies for testing setup
