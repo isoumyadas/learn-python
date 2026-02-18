@@ -255,4 +255,52 @@ Very useful for:
 3. Avoiding unwanted execution during import
 
 
+## Environment Variables
 
+- Api keys
+- Passwords
+- Connections strings
+
+.env file:
+  `pip install python-dotenv`
+
+## RUFF
+- Automatically format and lint your python code
+
+- You can learn more about this: 
+`https://python.datalumina.com/tools/code-quality`
+
+## UV
+- uv is a single tool that replaces:
+  - pip
+  - venv
+  - pip-tools
+  - pyenv
+- It's written in Rust and it is fast
+  
+### Differences
+
+- With Traditional way
+  # Create virtual environment
+    python -m venv .venv
+
+  # Activate it (different per OS!)
+  # Windows: .venv\Scripts\activate
+  # Mac/Linux: source .venv/bin/activate
+
+  # Install packages
+    pip install requests pandas numpy
+
+  # Save dependencies
+    pip freeze > requirements.txt
+
+- With uv
+  # Everything in one command
+    uv init
+    uv add requests pandas numpy
+
+learn more about this here:
+`https://python.datalumina.com/tools/dependencies/uv-intro#with-uv`
+
+## SETUP -> New Project
+`https://python.datalumina.com/tools/dependencies/complete-setup`
