@@ -90,3 +90,32 @@ player_attack(archer1)
 
 for char in [wizard1, archer1]:
     char.attack()
+
+# =============================== Super =====================================
+
+class User(object):
+    def __init__(self, email):
+        self.email = email
+    
+    def sign_in(self):
+        print(f"Logged IN")
+
+class Wizard(User):
+    def __init__(self,name, power, email):
+        # Either you can use this 
+        # User.__init__(self, email)
+        # or this
+        super().__init__(email)
+        self.name = name
+        self.power = power
+    
+    def attack(self):
+        print(f"Attacking with power - {self.power}")
+
+wiz1 = Wizard("Jaasu", 60, "jaadu@text.com")
+print(wiz1.email)
+
+# ==== Introspection ======
+
+print(dir(wiz1)) # This will give all the methods and attributes that the wiz1 instance has.
+
