@@ -119,3 +119,35 @@ print(wiz1.email)
 
 print(dir(wiz1)) # This will give all the methods and attributes that the wiz1 instance has.
 
+# =========================== Multiple Inheritence =========================
+
+class User(object): 
+    def sign_in(self):
+        print(f"Logged IN")
+
+class Wizard(User):
+    def __init__(self,name, power):
+        self.name = name
+        self.power = power
+    
+    def attack(self):
+        print(f"Attacking with power - {self.power}")
+
+class Archer(User):
+    def __init__(self, name, num_arrows):
+        self.name = name
+        self.num_arrows = num_arrows
+
+    def arrows_left(self):
+        print(f"Attacking with arrows: arrows left - {self.num_arrows}")
+    
+    def run(self):
+        print("Ran really fast!!!")
+
+class HybridBorg(Wizard, Archer):
+    def __init__(self, name, power, num_arrows):
+        Wizard.__init__(self, name, power)  
+        Archer.__init__(self, name, num_arrows)
+
+hb1 = HybridBorg("Sammy", 50,100)
+print(hb1.sign_in())
